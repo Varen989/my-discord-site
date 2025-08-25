@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Discord Community</title>
+<style>
+  * {margin:0; padding:0; box-sizing:border-box;}
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: url('newyork.png') no-repeat center center/cover;
+    color: white;
+    position: relative;
+    text-align: center;
+  }
+
+  /* Top-right buttons */
+  .top-right-buttons {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+  }
+  .top-right-buttons a {
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .top-right-buttons a:hover {
+    background: white;
+    color: black;
+  }
+
+  /* Fullscreen container for center content */
+  .center-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* เริ่มจากบน */
+    align-items: center;    
+    gap: 10px; /* ระยะห่างระหว่างแบนเนอร์, ข้อความ, ปุ่ม */
+    padding-top: 80px; /* เลื่อนขึ้นจากบน */
+  }
+
+  .banner {
+    max-width: 40%; /* ลดขนาดแบนเนอร์ลง */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  }
+
+  h1 {
+    font-size: 2.2em; /* ลดขนาดข้อความเล็กน้อย */
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  #enterBtn {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #enterBtn:hover {
+    background: white;
+    color: black;
+  }
+
+  /* Staff Page */
+  .staff-page {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .staff-list {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .staff-card {
+    background: rgba(0,0,0,0.6);
+    border: 1px solid white;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+  }
+
+  .staff-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .back-btn:hover {
+    background: white;
+    color: black;
+  }
+</style>
+</head>
+<body>
+
+  <!-- Top-right buttons -->
+  <div class="top-right-buttons">
+    <a href="#" onclick="showStaff()">Staff</a>
+    <a href="https://discord.gg/YOUR-LINK" target="_blank">Discord</a>
+  </div>
+
+  <!-- Center Content -->
+  <div class="center-container" id="home">
+    <img src="banner.png" alt="My Banner" class="banner">
+    <h1> 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗡𝗲𝘄 𝘆𝗼𝗿𝗸 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆</h1>
+    <button id="enterBtn" onclick="enterSite()">Enter Site</button>
+  </div>
+
+  <!-- Staff Page -->
+  <div id="staff" class="staff-page">
+    <h1>👥 Our Staff Team</h1>
+    <div class="staff-list">
+      <div class="staff-card">
+        <img src="rrr.png" alt="RRR+">
+        <h2>RRR+</h2>
+        <p>New York Owner</p>
+      </div>
+      <div class="staff-card">
+        <img src="vapark.png" alt="vapark.exe">
+        <h2>vapark.exe</h2>
+        <p>Assistant</p>
+      </div>
+      <div class="staff-card">
+        <img src="star.png" alt="star">
+        <h2>star</h2>
+        <p>Assistant New York</p>
+      </div>
+    </div>
+    <button class="back-btn" onclick="showHome()">⬅ Back</button>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+<script>
+  function enterSite() {
+    document.getElementById('bgmusic').play();
+    document.getElementById('enterBtn').style.display = 'none';
+  }
+
+  function showStaff() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("staff").style.display = "flex";
+  }
+
+  function showHome() {
+    document.getElementById("staff").style.display = "none";
+    document.getElementById("home").style.display = "flex";
+  }
+</script>
+
+</body>
+</html>
