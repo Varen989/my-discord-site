@@ -49,21 +49,21 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* เริ่มจากบน */
+    justify-content: flex-start;
     align-items: center;    
-    gap: 10px; /* ระยะห่างระหว่างแบนเนอร์, ข้อความ, ปุ่ม */
-    padding-top: 80px; /* เลื่อนขึ้นจากบน */
+    gap: 10px;
+    padding-top: 80px;
   }
 
   .banner {
-    max-width: 40%; /* ลดขนาดแบนเนอร์ลง */
+    max-width: 40%;
     height: auto;
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.6);
   }
 
   h1 {
-    font-size: 2.2em; /* ลดขนาดข้อความเล็กน้อย */
+    font-size: 2.2em;
     text-shadow: 2px 2px 8px #000;
   }
 
@@ -92,12 +92,13 @@
     min-height: 100vh;
   }
 
-  .staff-list {
+  /* ✅ เพิ่มมาสำหรับเรียงแถว */
+  .staff-row {
     display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
   }
 
   .staff-card {
@@ -144,42 +145,53 @@
   <!-- Center Content -->
   <div class="center-container" id="home">
     <img src="banner.png" alt="My Banner" class="banner">
-    <h1> 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗡𝗲𝘄 𝘆𝗼𝗿𝗸 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆</h1>
+    <h1>𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗡𝗲𝘄 𝘆𝗼𝗿𝗸 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝘆</h1>
     <button id="enterBtn" onclick="enterSite()">Enter Site</button>
   </div>
 
   <!-- Staff Page -->
   <div id="staff" class="staff-page">
-    <h1> Our Staff Team</h1>
-    <div class="staff-list">
+    <h1>𝗢𝘂𝗿 𝗦𝘁𝗮𝗳𝗳 𝗧𝗲𝗮𝗺</h1>
+
+    <!-- Owner -->
+    <div class="staff-row">
       <div class="staff-card">
-        <img src="rrr.png" alt="RRR+">
-        <h2>RRR+</h2>
-        <p>New York Owner</p>
-      </div>
-      <div class="staff-card">
-        <img src="vapark.png" alt="vapark.exe">
-        <h2>vapark.exe</h2>
-        <p>Assistant New York</p>
-      </div>
-      <div class="staff-card">
-        <img src="star.png" alt="star">
-        <h2>star</h2>
-        <p>Assistant New York</p>
-      </div>
-      <div class="staff-card">
-        <img src="art.png" alt="VARTINS.[KD]">
-        <h2>VARTINS.[KD]</h2>
-        <p>The boss New York</p>
-        <div class="staff-card">
-        <img src="Loter.png" alt="Loter">
-        <h2>Loter</h2>
-        <p>The boss New York</p>
+        <img src="rrr.png" alt="𝗥𝗥𝗥+">
+        <h2>𝗥𝗥𝗥+</h2>
+        <p>𝗡𝗲𝘄 𝗬𝗼𝗿𝗸 𝗢𝘄𝗻𝗲𝗿</p>
       </div>
     </div>
+
+    <!-- Assistants -->
+    <div class="staff-row">
+      <div class="staff-card">
+        <img src="vapark.png" alt="𝘃𝗮𝗽𝗮𝗿𝗸.𝗲𝘅𝗲">
+        <h2>𝘃𝗮𝗽𝗮𝗿𝗸.𝗲𝘅𝗲</h2>
+        <p>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗡𝗲𝘄 𝗬𝗼𝗿𝗸</p>
+      </div>
+      <div class="staff-card">
+        <img src="star.png" alt="𝘀𝘁𝗮𝗿">
+        <h2>𝘀𝘁𝗮𝗿</h2>
+        <p>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗡𝗲𝘄 𝗬𝗼𝗿𝗸</p>
+      </div>
+      <div class="staff-card">
+        <img src="Loter.png" alt="𝗟𝗼𝘁𝗲𝗿">
+        <h2>𝗟𝗼𝘁𝗲𝗿</h2>
+        <p>𝗔𝘀𝘀𝗶𝘀𝘁𝗮𝗻𝘁 𝗡𝗲𝘄 𝗬𝗼𝗿𝗸</p>
+      </div>
+    </div>
+
+    <!-- Boss -->
+    <div class="staff-row">
+      <div class="staff-card">
+        <img src="art.png" alt="𝗩𝗔𝗥𝗧𝗜𝗡𝗦.[𝗞𝗗]">
+        <h2>𝗩𝗔𝗥𝗧𝗜𝗡𝗦.[𝗞𝗗]</h2>
+        <p>𝗧𝗵𝗲 𝗯𝗼𝘀𝘀 𝗡𝗲𝘄 𝗬𝗼𝗿𝗸</p>
+      </div>
+    </div>
+
     <button class="back-btn" onclick="showHome()">⬅ Back</button>
   </div>
-
 
   <audio id="bgmusic" loop>
     <source src="music.mp3" type="audio/mpeg">
@@ -204,4 +216,3 @@
 
 </body>
 </html>
-
